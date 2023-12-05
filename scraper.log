@@ -1,0 +1,129 @@
+2023-12-05 20:31:54,590 - main - INFO - Creating subdirectories
+2023-12-05 20:31:54,591 - main - INFO - Loading scrape config
+2023-12-05 20:31:54,793 - main - INFO - Creating subdirectories
+2023-12-05 20:31:54,793 - main - INFO - Creating subdirectories
+2023-12-05 20:31:54,795 - main - INFO - Loading scrape config
+2023-12-05 20:31:54,795 - main - INFO - Loading scrape config
+2023-12-05 20:31:54,808 - main - INFO - Creating subdirectories
+2023-12-05 20:31:54,808 - main - INFO - Creating subdirectories
+2023-12-05 20:31:54,808 - main - INFO - Creating subdirectories
+2023-12-05 20:31:54,810 - main - INFO - Loading scrape config
+2023-12-05 20:31:54,810 - main - INFO - Loading scrape config
+2023-12-05 20:31:54,810 - main - INFO - Loading scrape config
+2023-12-05 20:31:54,814 - main - INFO - Saving final results
+2023-12-05 20:31:54,814 - main - INFO - Saving final results
+2023-12-05 20:31:54,814 - main - INFO - Saving final results
+2023-12-05 20:32:42,186 - main - INFO - Creating subdirectories
+2023-12-05 20:32:42,186 - main - INFO - Loading scrape config
+2023-12-05 20:32:42,190 - main - INFO - Scraping data
+2023-12-05 20:32:42,207 - main - INFO - Saving iteration 0 results to files
+2023-12-05 20:32:42,528 - main - INFO - Finished scraping zarate at 0 iteration
+2023-12-05 20:32:42,532 - main - INFO - Creating subdirectories
+2023-12-05 20:32:42,532 - main - INFO - Creating subdirectories
+2023-12-05 20:32:42,533 - main - INFO - Loading scrape config
+2023-12-05 20:32:42,533 - main - INFO - Loading scrape config
+2023-12-05 20:32:42,771 - main - INFO - Creating subdirectories
+2023-12-05 20:32:42,771 - main - INFO - Creating subdirectories
+2023-12-05 20:32:42,771 - main - INFO - Creating subdirectories
+2023-12-05 20:32:42,773 - main - INFO - Loading scrape config
+2023-12-05 20:32:42,773 - main - INFO - Loading scrape config
+2023-12-05 20:32:42,773 - main - INFO - Loading scrape config
+2023-12-05 20:32:42,777 - main - INFO - Saving final results
+2023-12-05 20:32:42,777 - main - INFO - Saving final results
+2023-12-05 20:32:42,777 - main - INFO - Saving final results
+2023-12-05 20:32:54,820 - main - INFO - Creating subdirectories
+2023-12-05 20:32:54,821 - main - INFO - Loading scrape config
+2023-12-05 20:32:54,824 - main - INFO - Scraping data
+2023-12-05 20:32:54,838 - main - INFO - Saving iteration 0 results to files
+2023-12-05 20:32:55,152 - main - INFO - Finished scraping zarate at 0 iteration
+2023-12-05 20:32:55,159 - main - INFO - Creating subdirectories
+2023-12-05 20:32:55,159 - main - INFO - Creating subdirectories
+2023-12-05 20:32:55,160 - main - INFO - Loading scrape config
+2023-12-05 20:32:55,160 - main - INFO - Loading scrape config
+2023-12-05 20:32:55,165 - main - INFO - Aggregating results
+2023-12-05 20:32:55,165 - main - INFO - Aggregating results
+2023-12-05 20:32:55,166 - main - INFO - Loading /path/to/dicts\file1.pkl
+2023-12-05 20:32:55,166 - main - INFO - Loading /path/to/dicts\file1.pkl
+2023-12-05 20:32:55,167 - main - INFO - Loading /path/to/dicts\file2.pkl
+2023-12-05 20:32:55,167 - main - INFO - Loading /path/to/dicts\file2.pkl
+2023-12-05 20:32:55,411 - main - INFO - Creating subdirectories
+2023-12-05 20:32:55,411 - main - INFO - Creating subdirectories
+2023-12-05 20:32:55,411 - main - INFO - Creating subdirectories
+2023-12-05 20:32:55,412 - main - INFO - Loading scrape config
+2023-12-05 20:32:55,412 - main - INFO - Loading scrape config
+2023-12-05 20:32:55,412 - main - INFO - Loading scrape config
+2023-12-05 20:32:55,415 - main - INFO - Saving final results
+2023-12-05 20:32:55,415 - main - INFO - Saving final results
+2023-12-05 20:32:55,415 - main - INFO - Saving final results
+2023-12-05 20:34:25,222 - main - INFO - Creating subdirectories
+2023-12-05 20:34:25,222 - main - INFO - Loading scrape config
+2023-12-05 20:34:25,226 - main - INFO - Scraping data
+2023-12-05 20:34:25,240 - main - INFO - Saving iteration 0 results to files
+2023-12-05 20:34:25,568 - main - INFO - Finished scraping zarate at 0 iteration
+2023-12-05 20:34:25,572 - main - INFO - Creating subdirectories
+2023-12-05 20:34:25,572 - main - INFO - Creating subdirectories
+2023-12-05 20:34:25,573 - main - INFO - Loading scrape config
+2023-12-05 20:34:25,573 - main - INFO - Loading scrape config
+2023-12-05 20:34:25,578 - main - INFO - Aggregating results
+2023-12-05 20:34:25,578 - main - INFO - Aggregating results
+2023-12-05 20:34:25,579 - main - INFO - Loading /path/to/dicts\file1.pkl
+2023-12-05 20:34:25,579 - main - INFO - Loading /path/to/dicts\file1.pkl
+2023-12-05 20:34:25,579 - main - INFO - Loading /path/to/dicts\file2.pkl
+2023-12-05 20:34:25,579 - main - INFO - Loading /path/to/dicts\file2.pkl
+2023-12-05 20:34:25,849 - main - INFO - Creating subdirectories
+2023-12-05 20:34:25,849 - main - INFO - Creating subdirectories
+2023-12-05 20:34:25,849 - main - INFO - Creating subdirectories
+2023-12-05 20:34:25,851 - main - INFO - Loading scrape config
+2023-12-05 20:34:25,851 - main - INFO - Loading scrape config
+2023-12-05 20:34:25,851 - main - INFO - Loading scrape config
+2023-12-05 20:34:25,854 - main - INFO - Saving final results
+2023-12-05 20:34:25,854 - main - INFO - Saving final results
+2023-12-05 20:34:25,854 - main - INFO - Saving final results
+2023-12-05 20:34:44,724 - main - INFO - Creating subdirectories
+2023-12-05 20:34:44,724 - main - INFO - Loading scrape config
+2023-12-05 20:34:44,729 - main - INFO - Scraping data
+2023-12-05 20:34:44,745 - main - INFO - Saving iteration 0 results to files
+2023-12-05 20:34:45,033 - main - INFO - Finished scraping zarate at 0 iteration
+2023-12-05 20:34:45,040 - main - INFO - Creating subdirectories
+2023-12-05 20:34:45,040 - main - INFO - Creating subdirectories
+2023-12-05 20:34:45,041 - main - INFO - Loading scrape config
+2023-12-05 20:34:45,041 - main - INFO - Loading scrape config
+2023-12-05 20:34:45,046 - main - INFO - Aggregating results
+2023-12-05 20:34:45,046 - main - INFO - Aggregating results
+2023-12-05 20:34:45,048 - main - INFO - Loading /path/to/dicts\file1.pkl
+2023-12-05 20:34:45,048 - main - INFO - Loading /path/to/dicts\file1.pkl
+2023-12-05 20:34:45,049 - main - INFO - Loading /path/to/dicts\file2.pkl
+2023-12-05 20:34:45,049 - main - INFO - Loading /path/to/dicts\file2.pkl
+2023-12-05 20:34:45,317 - main - INFO - Creating subdirectories
+2023-12-05 20:34:45,317 - main - INFO - Creating subdirectories
+2023-12-05 20:34:45,317 - main - INFO - Creating subdirectories
+2023-12-05 20:34:45,319 - main - INFO - Loading scrape config
+2023-12-05 20:34:45,319 - main - INFO - Loading scrape config
+2023-12-05 20:34:45,319 - main - INFO - Loading scrape config
+2023-12-05 20:34:45,322 - main - INFO - Saving final results
+2023-12-05 20:34:45,322 - main - INFO - Saving final results
+2023-12-05 20:34:45,322 - main - INFO - Saving final results
+2023-12-05 20:35:29,362 - main - INFO - Creating subdirectories
+2023-12-05 20:35:29,363 - main - INFO - Loading scrape config
+2023-12-05 20:35:29,367 - main - INFO - Scraping data
+2023-12-05 20:35:29,381 - main - INFO - Saving iteration 0 results to files
+2023-12-05 20:35:29,680 - main - INFO - Finished scraping zarate at 0 iteration
+2023-12-05 20:35:29,686 - main - INFO - Creating subdirectories
+2023-12-05 20:35:29,686 - main - INFO - Creating subdirectories
+2023-12-05 20:35:29,687 - main - INFO - Loading scrape config
+2023-12-05 20:35:29,687 - main - INFO - Loading scrape config
+2023-12-05 20:35:29,693 - main - INFO - Aggregating results
+2023-12-05 20:35:29,693 - main - INFO - Aggregating results
+2023-12-05 20:35:29,694 - main - INFO - Loading /path/to/dicts\file1.pkl
+2023-12-05 20:35:29,694 - main - INFO - Loading /path/to/dicts\file1.pkl
+2023-12-05 20:35:29,696 - main - INFO - Loading /path/to/dicts\file2.pkl
+2023-12-05 20:35:29,696 - main - INFO - Loading /path/to/dicts\file2.pkl
+2023-12-05 20:35:29,700 - main - INFO - Creating subdirectories
+2023-12-05 20:35:29,700 - main - INFO - Creating subdirectories
+2023-12-05 20:35:29,700 - main - INFO - Creating subdirectories
+2023-12-05 20:35:29,701 - main - INFO - Loading scrape config
+2023-12-05 20:35:29,701 - main - INFO - Loading scrape config
+2023-12-05 20:35:29,701 - main - INFO - Loading scrape config
+2023-12-05 20:35:29,704 - main - INFO - Saving final results
+2023-12-05 20:35:29,704 - main - INFO - Saving final results
+2023-12-05 20:35:29,704 - main - INFO - Saving final results

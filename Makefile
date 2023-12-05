@@ -21,5 +21,5 @@ prepare-commit:
 	isort .
 #	flake8 . --ignore=E402 || exit /b 0
 	utilities\pylint.bat
-#	utilities\pytest.bat
+	utilities\pytest.bat
 	git add *

@@ -1,5 +1,7 @@
 ../
+    .coverage
     .gitignore
+    .pre-commit-config.yaml
     deduplicated_results.xlsx
     environment.yml
     environment_filtered.yml
@@ -8,6 +10,7 @@
     Makefile
     Readme.md
     requirements.txt
+    __init__.py
     datos_maia/
         dfs/
             madereras_bs_as.xlsx
@@ -97,6 +100,9 @@
         maderera_dict_zarate.pkl
     jsons/
         maderera_zarate_0.json
+    tests/
+        test_google_maps_scraper_pytest.py
+        __init__.py
     utilities/
         excluded_libraries.txt
         filter_env.bat
@@ -104,3 +110,6 @@
         pylint.bat
         pytest.bat
         results/
+            folder_structure.txt
+            pylint-results.txt
+            pytest-results.txt

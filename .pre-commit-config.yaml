@@ -1,0 +1,40 @@
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+    -   id: check-yaml
+    #-   id: end-of-file-fixer
+    #    exclude: '^(Makefile|utilities/pylint-results\.txt|utilities/excluded_libraries\.txt|utilities/folder_structure.txt)$'
+    -   id: trailing-whitespace
+-   repo: https://github.com/pycqa/isort
+    rev: 5.12.0
+    hooks:
+      - id: isort
+        name: isort (python)
+#-   repo: https://github.com/hhatto/autopep8
+#    rev: v2.0.4
+#    hooks:
+#    -   id: autopep8
+-   repo: local
+    hooks:
+#    -   id: black
+#        name: black
+#        entry: black .
+#        language: system
+#        types: [python]
+#        require_serial: true
+#    -   id: flake8
+#        name: flake8
+#        entry: flake8 --ignore=E402 .
+#        language: system
+#        types: [python]
+#        #args: ['']
+#        require_serial: true
+    -   id: run-tests
+        name: run-tests
+        language: system
+        entry: pytest --cov
+        pass_filenames: false
+        always_run: true
+        types: [python]
+        require_serial: true

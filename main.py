@@ -2,6 +2,7 @@ import argparse
 import http.client
 import json
 import logging
+import logging.handlers
 import os
 import pickle
 import time
@@ -10,6 +11,7 @@ from typing import Any
 
 import pandas as pd
 from dotenv import dotenv_values
+from retrying import retry
 from tqdm import tqdm
 
 

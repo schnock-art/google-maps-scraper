@@ -1,0 +1,123 @@
+============================= test session starts =============================
+platform win32 -- Python 3.11.5, pytest-7.4.3, pluggy-1.3.0
+rootdir: C:\Users\jange\Python Scripts\google-maps-scraper
+plugins: cov-4.1.0
+collected 3 items
+
+tests\test_google_maps_scraper_pytest.py EEE                             [100%]
+
+=================================== ERRORS ====================================
+_____________________ ERROR at setup of test_scrape_data ______________________
+
+    @pytest.fixture
+    def scraper_args():
+>       return parse_arguments()
+
+tests\test_google_maps_scraper_pytest.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+main.py:31: in parse_arguments
+    return parser.parse_args()
+..\..\anaconda3\envs\google-maps\Lib\argparse.py:1872: in parse_args
+    self.error(msg % ' '.join(argv))
+..\..\anaconda3\envs\google-maps\Lib\argparse.py:2630: in error
+    self.exit(2, _('%(prog)s: error: %(message)s\n') % args)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = ArgumentParser(prog='pytest', usage=None, description=None, formatter_class=<class 'argparse.HelpFormatter'>, conflict_handler='error', add_help=True)
+status = 2
+message = 'pytest: error: unrecognized arguments: --cov-report term-missing --cov\n'
+
+    def exit(self, status=0, message=None):
+        if message:
+            self._print_message(message, _sys.stderr)
+>       _sys.exit(status)
+E       SystemExit: 2
+
+..\..\anaconda3\envs\google-maps\Lib\argparse.py:2617: SystemExit
+---------------------------- Captured stderr setup ----------------------------
+usage: pytest [-h] [--zone ZONE] [--coords COORDS] [--query QUERY]
+              [--country COUNTRY] [--domain DOMAIN] [--start START]
+              [--end END] [--output_file OUTPUT_FILE]
+              [--output_dir OUTPUT_DIR] [--scrape_env_dir SCRAPE_ENV_DIR]
+pytest: error: unrecognized arguments: --cov-report term-missing --cov
+__________________ ERROR at setup of test_aggregate_results ___________________
+
+    @pytest.fixture
+    def scraper_args():
+>       return parse_arguments()
+
+tests\test_google_maps_scraper_pytest.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+main.py:31: in parse_arguments
+    return parser.parse_args()
+..\..\anaconda3\envs\google-maps\Lib\argparse.py:1872: in parse_args
+    self.error(msg % ' '.join(argv))
+..\..\anaconda3\envs\google-maps\Lib\argparse.py:2630: in error
+    self.exit(2, _('%(prog)s: error: %(message)s\n') % args)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = ArgumentParser(prog='pytest', usage=None, description=None, formatter_class=<class 'argparse.HelpFormatter'>, conflict_handler='error', add_help=True)
+status = 2
+message = 'pytest: error: unrecognized arguments: --cov-report term-missing --cov\n'
+
+    def exit(self, status=0, message=None):
+        if message:
+            self._print_message(message, _sys.stderr)
+>       _sys.exit(status)
+E       SystemExit: 2
+
+..\..\anaconda3\envs\google-maps\Lib\argparse.py:2617: SystemExit
+---------------------------- Captured stderr setup ----------------------------
+usage: pytest [-h] [--zone ZONE] [--coords COORDS] [--query QUERY]
+              [--country COUNTRY] [--domain DOMAIN] [--start START]
+              [--end END] [--output_file OUTPUT_FILE]
+              [--output_dir OUTPUT_DIR] [--scrape_env_dir SCRAPE_ENV_DIR]
+pytest: error: unrecognized arguments: --cov-report term-missing --cov
+__________________ ERROR at setup of test_save_final_results __________________
+
+    @pytest.fixture
+    def scraper_args():
+>       return parse_arguments()
+
+tests\test_google_maps_scraper_pytest.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+main.py:31: in parse_arguments
+    return parser.parse_args()
+..\..\anaconda3\envs\google-maps\Lib\argparse.py:1872: in parse_args
+    self.error(msg % ' '.join(argv))
+..\..\anaconda3\envs\google-maps\Lib\argparse.py:2630: in error
+    self.exit(2, _('%(prog)s: error: %(message)s\n') % args)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = ArgumentParser(prog='pytest', usage=None, description=None, formatter_class=<class 'argparse.HelpFormatter'>, conflict_handler='error', add_help=True)
+status = 2
+message = 'pytest: error: unrecognized arguments: --cov-report term-missing --cov\n'
+
+    def exit(self, status=0, message=None):
+        if message:
+            self._print_message(message, _sys.stderr)
+>       _sys.exit(status)
+E       SystemExit: 2
+
+..\..\anaconda3\envs\google-maps\Lib\argparse.py:2617: SystemExit
+---------------------------- Captured stderr setup ----------------------------
+usage: pytest [-h] [--zone ZONE] [--coords COORDS] [--query QUERY]
+              [--country COUNTRY] [--domain DOMAIN] [--start START]
+              [--end END] [--output_file OUTPUT_FILE]
+              [--output_dir OUTPUT_DIR] [--scrape_env_dir SCRAPE_ENV_DIR]
+pytest: error: unrecognized arguments: --cov-report term-missing --cov
+
+---------- coverage: platform win32, python 3.11.5-final-0 -----------
+Name                                       Stmts   Miss  Cover   Missing
+------------------------------------------------------------------------
+main.py                                      117     79    32%   36-39, 43-51, 55-71, 75-77, 82-83, 87-129, 133-141, 145-148, 152-161
+tests\__init__.py                              0      0   100%
+tests\test_google_maps_scraper_pytest.py      35     21    40%   17, 20-31, 34-45, 48-53
+------------------------------------------------------------------------
+TOTAL                                        152    100    34%
+
+=========================== short test summary info ===========================
+ERROR tests/test_google_maps_scraper_pytest.py::test_scrape_data - SystemExit: 2
+ERROR tests/test_google_maps_scraper_pytest.py::test_aggregate_results - Syst...
+ERROR tests/test_google_maps_scraper_pytest.py::test_save_final_results - Sys...
+============================== 3 errors in 1.98s ==============================
