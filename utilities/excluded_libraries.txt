@@ -1,0 +1,4 @@
+  - vs2015_runtime
+  - vc
+  - ucrt
+  - vc14_runtime

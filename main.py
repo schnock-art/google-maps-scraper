@@ -1,18 +1,20 @@
-import json
-import os
-import time
+import argparse
 import http.client
+import json
+import logging
+import os
 import pickle
-from typing import Any
-import pandas as pd
+import time
 from os.path import expanduser
+from typing import Any
+
+import pandas as pd
 from dotenv import dotenv_values
 from tqdm import tqdm
-import argparse
-import logging
 
 
 def parse_arguments():
+        """Parse command line arguments."""
         parser = argparse.ArgumentParser()
         parser.add_argument('--zone', type=str, default='zarate')
         parser.add_argument('--coords', type=str, default='@-34.106385,-59.082982,13z')
@@ -28,18 +30,26 @@ def parse_arguments():
 
 class GoogleMapsScraper:
     def __init__(self, args):
+        """Initialize the scraper with command line arguments."""
         self.args = args
         self.initialize_logging()
         self.create_output_directories()
         self.scrape_it_config = self.get_scrape_config()
 
     def initialize_logging(self, level=logging.INFO):
+        """Set up logging for the application."""
         self.logger = logging.getLogger(__name__)
-        self.logger.setLevel(level)
-        return
-    
+        self.logger.setLevel(logging.INFO)
+
+        # Add log handler to log to file with rotation
+        handler = logging.handlers.RotatingFileHandler(
+            'scraper.log', maxBytes=10000, backupCount=1)
+        handler.setFormatter(logging.Formatter(
+            '%(asctime)s - %(name)s - %(levelname)s - %(message)s'))
+        self.logger.addHandler(handler)
 
     def create_output_directories(self):
+        """Create necessary directories for output files."""
         self.logger.info("Creating subdirectories")
         if self.args.output_dir is not None:
             if not os.path.exists(self.args.output_dir):
@@ -59,55 +69,66 @@ class GoogleMapsScraper:
             os.makedirs(self.output_dirs[subdir], exist_ok=True)
 
     def get_scrape_config(self):
+        """Load scrape config from .env file."""
         self.logger.info("Loading scrape config")
         home = expanduser("~")
         return dotenv_values(os.path.join(home, self.args.scrape_env_dir, "scrape-it.env"))
 
+    @retry(stop_max_attempt_number=1, wait_fixed=2000)
+    def make_request(self, conn, payload, headers):
+        """Make a request to the API with retries."""
+        conn.request("POST", "/scrape/google/locals", payload, headers)
+        return conn.getresponse()
 
     def scrape_data(self):
+        """Scrape data from Google Maps."""
         self.logger.info("Scraping data")
         conn = http.client.HTTPSConnection("api.scrape-it.cloud")
         self.current_df_dict = {}
         for i in tqdm(range(self.args.start, self.args.end)):
-            payload = json.dumps({
-                "country": self.args.country,
-                "domain": self.args.domain,
-                "keyword": self.args.query,
-                "start": 20 * i,
-                "ll": self.args.coords,
-            })
-            headers = {
-                'x-api-key': self.scrape_it_config["API_KEY"],
-                'Content-Type': 'application/json'
-            }
-            conn.request("POST", "/scrape/google/locals", payload, headers)
-            res = conn.getresponse()
-            data = res.read()
-            new_data = data.decode("utf-8")
-            result = json.loads(new_data)
-            df = pd.DataFrame(result["scrapingResult"]['locals'])
-            self.current_df_dict[f'{self.args.zone}_{i}'] = df
+            try:
+                payload = json.dumps({
+                    "country": self.args.country,
+                    "domain": self.args.domain,
+                    "keyword": self.args.query,
+                    "start": 20 * i,
+                    "ll": self.args.coords,
+                })
+                headers = {
+                    'x-api-key': self.scrape_it_config["API_KEY"],
+                    'Content-Type': 'application/json'
+                }
 
-            # Saving results to files
-            self.logger.info(f"Saving iteration {i} results to files")
-            with open(os.path.join(self.output_dirs["jsons"], f'{self.args.query}_{self.args.zone}_{i}.json'), 'w') as outfile:
-                json.dump(result, outfile)
-            with open(os.path.join(self.output_dirs["dicts"], f'{self.args.query}_dict_{self.args.zone}.pkl'), 'wb') as outfile:
-                pickle.dump(self.current_df_dict, outfile)
-            
-            joined_df = pd.concat(self.current_df_dict.values())
-            joined_df.to_excel(os.path.join(self.output_dirs["dfs"], f"{self.args.query}_{self.args.zone}.xlsx"))
+                res = self.make_request(conn, payload, headers)
+                data = res.read()
+                new_data = data.decode("utf-8")
+                result = json.loads(new_data)
+                df = pd.DataFrame(result["scrapingResult"]['locals'])
+                self.current_df_dict[f'{self.args.zone}_{i}'] = df
 
-            if len(result["scrapingResult"]['locals']) < 20:
-                self.logger.info(f"Finished scraping {self.args.zone} at {i} iteration")
-                break
+                # Saving results to files
+                self.logger.info(f"Saving iteration {i} results to files")
+                with open(os.path.join(self.output_dirs["jsons"], f'{self.args.query}_{self.args.zone}_{i}.json'), 'w') as outfile:
+                    json.dump(result, outfile)
+                with open(os.path.join(self.output_dirs["dicts"], f'{self.args.query}_dict_{self.args.zone}.pkl'), 'wb') as outfile:
+                    pickle.dump(self.current_df_dict, outfile)
+                
+                joined_df = pd.concat(self.current_df_dict.values())
+                joined_df.to_excel(os.path.join(self.output_dirs["dfs"], f"{self.args.query}_{self.args.zone}.xlsx"))
 
-            time.sleep(2)
+                if len(result["scrapingResult"]['locals']) < 20:
+                    self.logger.info(f"Finished scraping {self.args.zone} at {i} iteration")
+                    break
+
+                time.sleep(2)
+            except Exception as e:
+                self.logger.error(f"Error during scraping: {e}")
+                raise
         return self.current_df_dict
     
     def aggregate_results(self):
+        """Aggregate results from saved files."""
         self.logger.info("Aggregating results")
-        #Aggregating results from saved files
         self.joined_dict = {}
         for path, subdirs, files in os.walk(self.output_dirs["dicts"]):
             for name in files:
@@ -118,8 +139,8 @@ class GoogleMapsScraper:
         return self.joined_dict
     
     def save_final_results(self):
+        """Save final results to file."""
         self.logger.info("Saving final results")
-        # Save final results logic...
         self.joined_df = pd.concat(self.joined_dict.values())
         self.joined_df.drop_duplicates(subset=["placeId"], inplace=True)
         self.joined_df.to_excel(self.output_file)
